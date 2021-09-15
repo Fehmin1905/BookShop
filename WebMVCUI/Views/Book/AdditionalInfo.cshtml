@@ -1,0 +1,19 @@
+﻿@model Entities.Dtos.BookForGetByIdDto
+@{ 
+    string bookstatus = null;
+    string shippingstatus = null;
+    if (Model.BookStatus == true) { bookstatus = "Yeni"; } else bookstatus = "Işlənmiş";
+
+    if (Model.ShippingStatus == true) { shippingstatus = "Pulsuz çatdırılma"; } else shippingstatus = "Ödənişli çatdırılma";
+}
+
+<h2>Additional info</h2>
+
+<div class="card">
+    <h5 class="card-header">@Model.BookName</h5>
+    <div class="card-body">
+        <h5 class="card-title">@Model.AuthorName -- @Model.Price AZN -- @Model.Language -- @Model.PublishTime -- @shippingstatus -- @bookstatus</h5>
+        <p class="card-text">@Model.Description</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
